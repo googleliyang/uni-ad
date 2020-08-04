@@ -1,11 +1,10 @@
 <template>
 	<view class="container">
-		<view class="left-bottom-sign"></view>
 		<view class="back-btn yticon icon-zuojiantou-up" @click="navBack"></view>
 		<view class="right-top-sign"></view>
 		<!-- 设置白色背景防止软键盘把下部绝对定位元素顶上来盖住输入框等 -->
 		<view class="wrapper">
-			<view class="left-top-sign">LOGIN</view>
+			<!-- <view class="left-top-sign">LOGIN</view> -->
 			<view class="welcome">
 				<!-- 欢迎回来！ -->
 			</view>
@@ -117,12 +116,17 @@
 		height: 100vh;
 		overflow: hidden;
 		background: #fff;
+		background: url('../../static/login_bg.png');
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
 	}
 	.wrapper{
 		position:relative;
+		padding-top: 300upx;
 		z-index: 90;
-		background: #fff;
+		// background: #fff;
 		padding-bottom: 40upx;
+		
 	}
 	.back-btn{
 		position:absolute;
@@ -144,25 +148,7 @@
 		top: 80upx;
 		right: -30upx;
 		z-index: 95;
-		&:before, &:after{
-			display:block;
-			content:"";
-			width: 400upx;
-			height: 80upx;
-			background: #b4f3e2;
-		}
-		&:before{
-			transform: rotate(50deg);
-			border-radius: 0 50px 0 0;
-		}
-		&:after{
-			position: absolute;
-			right: -198upx;
-			top: 0;
-			transform: rotate(-50deg);
-			border-radius: 50px 0 0 0;
-			/* background: pink; */
-		}
+	
 	}
 	.left-bottom-sign{
 		position:absolute;

@@ -5,7 +5,7 @@ const userInfo = {
 		id: 1,
 		mobile: 18888888888,
 		nickname: 'Leo yo',
-		portrait: 'http://img.61ef.cn/news/201409/28/2014092805595807.jpg'
+		portrait: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596560171983&di=b7ab771783fad8de270b5e9b2a105a5b&imgtype=0&src=http%3A%2F%2Fdiy.qqjay.com%2Fu%2Ffiles%2F2012%2F0812%2F07b81c63c37880a882b32b5e4ec5c028.jpg'
 	},
 	msg: '提示'
 }

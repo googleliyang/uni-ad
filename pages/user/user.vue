@@ -2,7 +2,7 @@
     <view class="container">  
 		
 		<view class="user-section">
-			<image class="bg" src="/static/user-bg.jpg"></image>
+			<div class="bg" src="/static/user-bg.jpg"></div>
 			<view class="user-info-box" @click="navTo()">
 				<view class="portrait-box">
 					<image class="portrait" :src="userInfo.portrait || '/static/missing-face.png'"></image>
@@ -12,10 +12,9 @@
 				</view>
 			</view>
 			<view class="vip-card-box">
-				<image class="card-bg" src="/static/vip-card-bg.png" mode=""></image>
 				<view class="b-btn"> 立即开通 </view>
 				<view class="tit">
-					<text class="yticon icon-iLinkapp-"></text> DCloud会员 
+					<text class="yticon icon-iLinkapp-"></text> 成为会员 
 				</view>
 				<text class="e-m">DCloud Union</text>
 				<text class="e-b">开通会员开发无bug 一测就上线</text>
@@ -219,8 +218,7 @@
 			top: 0;
 			width: 100%;
 			height: 100%;
-			filter: blur(1px);
-			opacity: .7;
+			background: linear-gradient(left, rgb(135, 175, 243	), #6298EA);
 		}
 	}
 	.user-info-box{
@@ -237,7 +235,7 @@
 		}
 		.username{
 			font-size: $font-lg + 6upx;
-			color: $font-color-dark;
+			color: $font-color-light; 
 			margin-left: 20upx;
 		}
 	}
@@ -247,7 +245,7 @@
 		flex-direction: column;
 		color: #f7d680;
 		height: 240upx;
-		background: linear-gradient(left, rgba(0,0,0,.7), rgba(0,0,0,.8));
+		background: #fff;
 		border-radius: 16upx 16upx 0 0;
 		overflow: hidden;
 		position: relative;

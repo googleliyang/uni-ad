@@ -453,7 +453,7 @@
 		}
 		.tit2{
 			font-size: $font-sm;
-			color: $font-color-light;
+			color: $font-color-dark;
 		}
 		.icon-you{
 			font-size: $font-lg +2upx;
