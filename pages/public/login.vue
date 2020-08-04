@@ -7,7 +7,7 @@
 		<view class="wrapper">
 			<view class="left-top-sign">LOGIN</view>
 			<view class="welcome">
-				欢迎回来！
+				<!-- 欢迎回来！ -->
 			</view>
 			<view class="input-content">
 				<view class="input-item">

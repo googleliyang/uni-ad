@@ -12,7 +12,7 @@ const userInfo = {
 /* 首页轮播图 */
 const carouselList = [{
 		src: "/static/temp/banner3.jpg",
-		background: "rgb(203, 87, 60)",
+		background: "rgb(138, 198, 250)",
 	},
 	{
 		src: "/static/temp/banner2.jpg",
