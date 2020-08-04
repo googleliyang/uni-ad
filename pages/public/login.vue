@@ -116,9 +116,12 @@
 		height: 100vh;
 		overflow: hidden;
 		background: #fff;
-		background: url('../../static/login_bg.png');
+		background-image: url('../../static/login_bg.png');
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
+
+
+
 	}
 	.wrapper{
 		position:relative;
