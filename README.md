@@ -11,4 +11,6 @@ background:linear-gradient(306deg,rgba(72,197,215,1) 0%,rgba(122, 228, 239) 100%
 
 4 join icon
 
+5 update head to place
+
 
