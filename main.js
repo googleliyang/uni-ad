@@ -3,7 +3,7 @@ import store from './store'
 import App from './App'
 
 import Json from './Json' //测试用数据
-import http from './util/http' //测试用数据
+import http from './util/apiService' //测试用数据
 /**
  *  因工具函数属于公司资产, 所以直接在Vue实例挂载几个常用的函数
  *  所有测试用数据均存放于根目录json.js

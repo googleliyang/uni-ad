@@ -102,7 +102,7 @@
 					password
 				}; 
 
-				this.$http.post( '/login', sendData, (res) => {
+				this.$http.login(sendData, (res) => {
 					this.$api.msg('登录成功, 即将跳转首页')
 					let token = res.data.token
 					uni.navigateBack()

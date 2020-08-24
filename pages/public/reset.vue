@@ -26,7 +26,7 @@
 						<text class="tit">验证码</text>
 						<text :class="endTime > 0 ? 'tit captcha forbidden' : 'tit captcha'" @click="sendSms">发送验证码{{endTime > 0 ? endTime : ''}}</text> 
 					</div>
-                    
+
 					<input 
 						type="text" 
 						value="" 
@@ -120,7 +120,7 @@
 				uni.navigateBack();
 			},
 			reset(){
-				this.$http.post( '/resetPass', {
+				this.$http.reset( '/resetPass', {
 					code: this.captcha,
 					mobile: this.mobile,
                     password: this.password,

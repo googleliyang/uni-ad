@@ -123,7 +123,7 @@
 				uni.navigateBack();
 			},
 			toRegist(){
-				this.$http.post( '/register', {
+				this.$http.register( '/register', {
 					code: this.captcha,
 					name: this.mobile,
 					mobile: this.mobile,
