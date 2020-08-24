@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import Constants from '../util/constants'
 
 Vue.use(Vuex)
 
@@ -14,7 +15,7 @@ const store = new Vuex.Store({
 			state.hasLogin = true;
 			state.userInfo = provider;
 			uni.setStorage({//缓存用户登陆状态
-			    key: 'userInfo',  
+			    key: Constants.USERINFO,  
 			    data: provider  
 			}) 
 			console.log(state.userInfo);
@@ -23,10 +24,10 @@ const store = new Vuex.Store({
 			state.hasLogin = false;
 			state.userInfo = {}; 
 			uni.removeStorage({  
-                key: 'TOKEN'  
+			    key: Constants.TOKEN,  
             })
 			uni.removeStorage({  
-                key: 'userInfo'  
+			    key: Constants.USERINFO,  
             })
 		}
 	},

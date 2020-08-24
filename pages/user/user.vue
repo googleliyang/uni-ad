@@ -11,13 +11,19 @@
 					<text class="username">{{userInfo.name || '游客'}}</text>
 				</view>
 			</view>
-			<view class="vip-card-box">
+			<view>
+			<view class="vip-card-box" v-if="userInfo.is_vip">
 				<view class="b-btn"> 立即开通 </view>
 				<view class="tit">
 					<text class="yticon icon-iLinkapp-"></text> 成为会员 
 				</view>
-				<text class="e-m">DCloud Union</text>
-				<text class="e-b">开通会员开发无bug 一测就上线</text>
+			</view>
+			<view class="vip-card-box" v-else>
+				<view class="b-btn"> 续费 </view>
+				<view class="tit">
+					<text class="yticon icon-iLinkapp-"></text> 到期时间: {{userInfo.vip_end_time}} 
+				</view>
+			</view>
 			</view>
 		</view>
 		
