@@ -36,9 +36,10 @@
 				</view>
 			</view>
 			<button class="confirm-btn" @click="toLogin" :disabled="logining">登录</button>
-			<view class="forget-section">
+			<view class="forget-section" @click="toForget"> 
 				忘记密码?
 			</view>
+			
 		</view>
 		<view class="register-section">
 			还没有账号?
@@ -65,6 +66,12 @@
 		},
 		methods: {
 			...mapMutations(['login']),
+			toForget() {
+				this.$api.msg('123')
+				uni.navigateTo({
+					url: '/pages/public/reset'
+				})
+			},
 			inputChange(e){
 				const key = e.currentTarget.dataset.key;
 				this[key] = e.detail.value;
@@ -73,6 +80,9 @@
 				uni.navigateBack();
 			},
 			toRegist(){
+				uni.navigateTo({
+					url: '/pages/public/register'
+				})
 				this.$api.msg('去注册');
 			},
 			async toLogin(){
@@ -90,15 +100,31 @@
 				const sendData = {
 					mobile,
 					password
-				};
-				const result = await this.$api.json('userInfo');
-				if(result.status === 1){
-					this.login(result.data);
-                    uni.navigateBack();  
-				}else{
-					this.$api.msg(result.msg);
-					this.logining = false;
-				}
+				}; 
+
+				this.$http.post( '/login', sendData, (res) => {
+					this.$api.msg('登录成功, 即将跳转首页')
+					let token = res.data.token
+					uni.navigateBack()
+					//  uni.navigateTo({
+					// 	 url: '/pages/index/index'
+					//  });
+					console.log('user info >>>', res.data.user)
+					this.login(res.data.user)
+				}, (err) => { 
+					console.error(err)
+				}, ()=> {
+					this.logining = false
+				})
+
+				// const result = await this.$api.json('userInfo');
+				// if(result.status === 1){
+				// 	this.login(result.data);
+                //     uni.navigateBack();  
+				// }else{
+				// 	this.$api.msg(result.msg);
+				// 	this.logining = false;
+				// }
 			}
 		},
 
@@ -118,10 +144,7 @@
 		background: #fff;
 		background-image: url('../../static/login_bg.png');
 		background-repeat: no-repeat;
-		background-size: 100% 100%;
-
-
-
+		background-size: 100% 100%; 
 	}
 	.wrapper{
 		position:relative;

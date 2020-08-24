@@ -8,7 +8,7 @@
 					<image class="portrait" :src="userInfo.portrait || '/static/missing-face.png'"></image>
 				</view>
 				<view class="info-box" >
-					<text class="username">{{userInfo.nickname || '游客'}}</text>
+					<text class="username">{{userInfo.name || '游客'}}</text>
 				</view>
 			</view>
 			<view class="vip-card-box">
@@ -110,6 +110,7 @@
 			}
 		},
 		onLoad(){
+			// this.fetchUserInfo()
 		},
 		// #ifndef MP
 		onNavigationBarButtonTap(e) {
@@ -135,6 +136,11 @@
 			...mapState(['hasLogin','userInfo'])
 		},
         methods: {
+		fetchUserInfo() {
+			this.$http.post('/details', res => {
+				console.log('获取用户信息为', res)
+			})
+		},
 
 			/**
 			 * 统一跳转接口,拦截未登录路由
